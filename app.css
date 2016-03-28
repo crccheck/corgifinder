@@ -162,7 +162,7 @@ td, th {
     color: inherit;
     text-decoration: none; }
 
-img {
+.embed img {
   width: 100%; }
 
 .chat-history {
@@ -185,16 +185,20 @@ img {
     color: darkred; }
 
 .user-input-container {
-  box-sizing: border-box;
   bottom: 0;
-  position: fixed; }
+  padding: 0.25rem;
+  position: fixed;
+  width: 100%; }
 
 .user-input {
-  margin: 0.25rem;
   width: 100%; }
 
 body {
-  background: powderblue; }
+  background: powderblue;
+  min-height: 100vh; }
+
+* {
+  box-sizing: inherit; }
 
 .site-nav {
   background: #444;
@@ -212,12 +216,47 @@ body {
   .logo em {
     color: red; }
 
+.content {
+  font-family: sans-serif;
+  font-size: 3em;
+  padding: 0 1rem;
+  text-align: justify; }
+  .content strong {
+    color: royalblue;
+    font-size: 1.1em;
+    letter-spacing: 0.03em;
+    text-transform: uppercase; }
+
+.carousel img {
+  width: 100px; }
+
+.corgi-chat {
+  float: right;
+  margin-left: 1rem; }
+
 .site-footer {
   background: gray;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
   color: #eee;
   font-size: 0.8em;
   margin-top: 1rem;
-  padding: 0.5rem; }
+  padding: 0.5rem;
+  width: 100%; }
   .site-footer a {
     color: inherit;
     text-decoration: none; }
+
+@media only screen and (max-device-width: 480px) {
+  .logo {
+    display: block; }
+  .corgi-chat {
+    box-sizing: border-box;
+    bottom: 0;
+    float: none;
+    left: 5%;
+    margin: 0;
+    position: absolute;
+    width: 90%;
+    z-index: 100; } }
