@@ -44,6 +44,6 @@ const names = [
   'Tiny',
   'Whiskey',
   'Willow'
-];
+]
 
-export default names;
+export default names

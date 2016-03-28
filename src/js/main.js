@@ -1,7 +1,7 @@
-import corgiNames from './names';
+import corgiNames from './names'
 
-const chat = document.getElementById('chat');
-const name = corgiNames[Math.floor(Math.random() * corgiNames.length)];
+const chat = document.getElementById('chat')
+const name = corgiNames[Math.floor(Math.random() * corgiNames.length)]
 const userInput = document.getElementById('arf')
 const MAX_HISTORY = 100
 const CHATTER_DELAY = 60
@@ -11,59 +11,59 @@ const REPLY_JITTER = 3
 
 let speakTimer
 
-function greet() {
-  const newElem = document.createElement('li');
-  newElem.className = 'greet';
+function greet () {
+  const newElem = document.createElement('li')
+  newElem.className = 'greet'
   newElem.innerHTML = `You're chatting with: <span class="name">${name}</span>`
-  chat.appendChild(newElem);
+  chat.appendChild(newElem)
 }
 
-function speak() {
-  const newElem = document.createElement('li');
-  newElem.className = 'message corgi';
-  newElem.innerHTML = `<span class="name">${name}</span>: aRf aRf`;
+function speak () {
+  const newElem = document.createElement('li')
+  newElem.className = 'message corgi'
+  newElem.innerHTML = `<span class="name">${name}</span>: aRf aRf`
   // Prevent creating an infinite number of DOM nodes
   if (chat.childElementCount > MAX_HISTORY) {
     chat.firstChild.remove()
   }
-  chat.appendChild(newElem);
-  chat.scrollTop = chat.scrollHeight;
+  chat.appendChild(newElem)
+  chat.scrollTop = chat.scrollHeight
 }
 
-function reply(text) {
-  const newElem = document.createElement('li');
-  newElem.className = 'message user';
+function reply (text) {
+  const newElem = document.createElement('li')
+  newElem.className = 'message user'
   newElem.innerHTML = '<span class="name">You</span>: '
   // Prevents the user from injecting html
   newElem.appendChild(document.createTextNode(text))
-  chat.appendChild(newElem);
+  chat.appendChild(newElem)
   if (speakTimer) {
     window.clearTimeout(speakTimer)
   }
-  const speakAgain = REPLY_DELAY + Math.random() * REPLY_JITTER  // seconds
+  const speakAgain = REPLY_DELAY + Math.random() * REPLY_JITTER // seconds
   window.setTimeout(autoSpeak, speakAgain * 1000)
 }
 
-function autoSpeak() {
+function autoSpeak () {
   if (speakTimer) {
     window.clearTimeout(speakTimer)
   }
-  speak();
-  const speakAgain = CHATTER_DELAY + Math.random() * CHATTER_JITTER  // seconds
-  speakTimer = setTimeout(autoSpeak, speakAgain * 1000);
+  speak()
+  const speakAgain = CHATTER_DELAY + Math.random() * CHATTER_JITTER // seconds
+  speakTimer = setTimeout(autoSpeak, speakAgain * 1000)
 }
 
-function onKey(e) {
+function onKey (e) {
   switch (e.keyCode) {
     case 13:
       const text = userInput.value
       if (text) {
         reply(userInput.value)
       }
-      // falls through
+    // falls through
     case 27:
       userInput.value = ''
-    break;
+      break
   }
 }
 userInput.addEventListener('keypress', onKey, false)

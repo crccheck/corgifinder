@@ -4,7 +4,7 @@
   "description": "Welcome to my Homepage",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "standard"
   },
   "private": true,
   "repository": {
@@ -15,9 +15,13 @@
   "bugs": {
     "url": "https://github.com/crccheck/crccheck.com/issues"
   },
+  "standard": {
+    "parser": "babel-eslint"
+  },
   "homepage": "https://github.com/crccheck/crccheck.com#readme",
   "devDependencies": {
     "autoprefixer": "^6.0.3",
+    "babel-eslint": "^6.0.0",
     "babel-preset-es2015": "^6.6.0",
     "babelify": "^7.2.0",
     "grunt": "^0.4.5",
