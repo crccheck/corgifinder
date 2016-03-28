@@ -10,7 +10,7 @@ gh-pages: ## Build static files and deploy to gh-pages
 gh-pages: clean gh-pages/.git
 	NODE_ENV=production grunt build
 	mkdir -p $@
-	cp app/* $@
+	cp -r app/* $@
 	cd $@ && \
 	git add . && \
 	git commit -am "Pages build" && \

@@ -48,12 +48,12 @@ img {
 }
 
 .user-input-container {
-  box-sizing: border-box;
   bottom: 0;
+  padding: 0.25rem;
   position: fixed;
+  width: 100%;
 }
 
 .user-input {
-  margin: 0.25rem;
   width: 100%;
 }
