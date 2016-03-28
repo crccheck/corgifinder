@@ -24,3 +24,15 @@ nav {
     color: red;
   }
 }
+
+footer {
+  background: gray;
+  color: #eee;
+  font-size: 0.8em;
+  padding: 0.5rem;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
