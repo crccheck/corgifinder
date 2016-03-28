@@ -26,6 +26,16 @@ img {
   list-style: none;
   margin: 0;
   padding: 0.3rem;
+
+  .greet {
+    color: #666;
+    font-size: 0.9em;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+  }
+  .name {
+    font-weight: bold;
+  }
 }
 
 .user-input-container {
