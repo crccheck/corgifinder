@@ -1,12 +1,14 @@
 @import "normalize";
+@import "./embed.scss";
 
 body {
   background: powderblue;
 }
 
-nav {
+.site-nav {
   background: #444;
   color: #eee;
+  margin-bottom: 1rem;
   padding: 0.5rem;
 
   .logo {
@@ -25,10 +27,11 @@ nav {
   }
 }
 
-footer {
+.site-footer {
   background: gray;
   color: #eee;
   font-size: 0.8em;
+  margin-top: 1rem;
   padding: 0.5rem;
 
   a {
