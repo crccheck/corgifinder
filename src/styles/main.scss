@@ -1,0 +1,26 @@
+@import "normalize";
+
+body {
+  background: powderblue;
+}
+
+nav {
+  background: #444;
+  color: #eee;
+  padding: 0.5rem;
+
+  .logo {
+    color: white;
+    margin-right: 0.5rem;
+  }
+}
+
+.logo {
+  font-family: impact;
+  font-size: 2em;
+  font-style: italic;
+
+  em {
+    color: red;
+  }
+}
