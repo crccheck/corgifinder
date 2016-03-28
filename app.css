@@ -147,14 +147,61 @@ table {
 td, th {
   padding: 0; }
 
+.embed {
+  background: white;
+  border: 1px solid #333;
+  box-sizing: border-box;
+  height: 100vh; }
+
+.embed-nav {
+  background: royalblue;
+  color: white;
+  padding: 0.25rem;
+  font-weight: bold; }
+  .embed-nav a {
+    color: inherit;
+    text-decoration: none; }
+
+img {
+  width: 100%; }
+
+.chat-history {
+  font-size: 0.9em;
+  height: calc(100vh - 74vw - 4em);
+  list-style: none;
+  margin: 0;
+  overflow-y: scroll;
+  padding: 0.3rem; }
+  .chat-history .greet {
+    color: #666;
+    font-size: 0.9em;
+    font-style: italic;
+    margin-bottom: 0.5rem; }
+  .chat-history .name {
+    font-weight: bold; }
+  .chat-history .corgi {
+    color: midnightblue; }
+  .chat-history .user {
+    color: darkred; }
+
+.user-input-container {
+  box-sizing: border-box;
+  bottom: 0;
+  position: fixed; }
+
+.user-input {
+  margin: 0.25rem;
+  width: 100%; }
+
 body {
   background: powderblue; }
 
-nav {
+.site-nav {
   background: #444;
   color: #eee;
+  margin-bottom: 1rem;
   padding: 0.5rem; }
-  nav .logo {
+  .site-nav .logo {
     color: white;
     margin-right: 0.5rem; }
 
@@ -164,3 +211,13 @@ nav {
   font-style: italic; }
   .logo em {
     color: red; }
+
+.site-footer {
+  background: gray;
+  color: #eee;
+  font-size: 0.8em;
+  margin-top: 1rem;
+  padding: 0.5rem; }
+  .site-footer a {
+    color: inherit;
+    text-decoration: none; }
