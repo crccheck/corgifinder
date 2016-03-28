@@ -2,3 +2,4 @@ node_modules
 
 # Compiled
 app/app.*
+gh-pages
