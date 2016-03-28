@@ -23,8 +23,11 @@ img {
 
 .chat-history {
   font-size: 0.9em;
+  // should be: 100vh - 2/3*100vw - .embed-nav - .user-input-container
+  height: calc(100vh - 74vw - 4em);
   list-style: none;
   margin: 0;
+  overflow-y: scroll;
   padding: 0.3rem;
 
   .greet {
@@ -36,12 +39,18 @@ img {
   .name {
     font-weight: bold;
   }
+  .corgi {
+    color: midnightblue;
+  }
+  .user {
+    color: darkred;
+  }
 }
 
 .user-input-container {
   box-sizing: border-box;
   bottom: 0;
-  position: absolute;
+  position: fixed;
 }
 
 .user-input {
