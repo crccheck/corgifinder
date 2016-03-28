@@ -5,8 +5,10 @@ help: ## Shows this help
 clean:
 	rm -rf gh-pages/*
 
+build: ## Build static files and deploy to gh-pages
+build: gh-pages
+
 .PHONY: gh-pages
-gh-pages: ## Build static files and deploy to gh-pages
 gh-pages: clean gh-pages/.git
 	NODE_ENV=production grunt build
 	mkdir -p $@
@@ -15,7 +17,6 @@ gh-pages: clean gh-pages/.git
 	git add . && \
 	git commit -am "Pages build" && \
 	git push origin gh-pages
-
 
 gh-pages/.git:
 	mkdir -p $@

@@ -33,7 +33,26 @@ body {
 }
 
 .content {
-  padding: 0 1em;
+  font-family: sans-serif;;
+  font-size: 3em;
+  padding: 0 1rem;
+  text-align: justify;
+
+  strong {
+    color: royalblue;
+    font-size: 1.1em;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+}
+
+.carousel img {
+  width: 100px;
+}
+
+.corgi-chat {
+  float: right;
+  margin-left: 1rem;
 }
 
 .site-footer {
@@ -61,7 +80,9 @@ body {
   .corgi-chat {
     box-sizing: border-box;
     bottom: 0;
+    float: none;
     left: 5%;
+    margin: 0;
     position: absolute;
     width: 90%;
     z-index: 100;
