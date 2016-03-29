@@ -4,6 +4,7 @@
 body {
   background: powderblue;
   min-height: 100vh;
+  position: relative;  // for footer hack
 }
 
 * {
@@ -34,15 +35,37 @@ body {
 
 .content {
   font-family: sans-serif;;
-  font-size: 3em;
+  font-size: 3rem;
+  max-width: 26em;
+  margin: 0 auto;
   padding: 0 1rem;
   text-align: justify;
+
 
   strong {
     color: royalblue;
     font-size: 1.1em;
     letter-spacing: 0.03em;
     text-transform: uppercase;
+  }
+}
+
+.cta a {
+  background: midnightblue;
+  box-shadow: 0.1em 0.1em 0 black;
+  color: white;
+  display: inline-block;
+  font-family: impact;
+  font-size: 2rem;
+  line-height: 1em;
+  padding: 0.4em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 0.1s, box-shadow 0.1s;
+
+  &:hover {
+    background: lighten(midnightblue, 10%);
+    box-shadow: 0.2em 0.2em 0 black;
   }
 }
 
