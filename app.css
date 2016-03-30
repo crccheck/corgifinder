@@ -229,6 +229,11 @@ body {
     font-size: 1.1em;
     letter-spacing: 0.03em;
     text-transform: uppercase; }
+  .content img {
+    max-width: 100%; }
+
+.cta {
+  font-size: 2rem; }
 
 .cta a {
   background: midnightblue;
@@ -236,7 +241,6 @@ body {
   color: white;
   display: inline-block;
   font-family: impact;
-  font-size: 2rem;
   line-height: 1em;
   padding: 0.4em;
   text-decoration: none;
@@ -245,9 +249,6 @@ body {
   .cta a:hover {
     background: #22229a;
     box-shadow: 0.2em 0.2em 0 black; }
-
-.carousel img {
-  width: 100px; }
 
 .corgi-chat {
   float: right;
@@ -265,11 +266,14 @@ body {
   width: 100%; }
   .site-footer a {
     color: inherit;
+    margin-right: 1.2em;
     text-decoration: none; }
 
 @media only screen and (max-device-width: 480px) {
   .logo {
     display: block; }
+  .content, .cta {
+    font-size: 1.2rem; }
   .corgi-chat {
     box-sizing: border-box;
     bottom: 0;
