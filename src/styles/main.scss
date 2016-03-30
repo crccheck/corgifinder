@@ -48,6 +48,14 @@ body {
     letter-spacing: 0.03em;
     text-transform: uppercase;
   }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.cta {
+  font-size: 2rem;
 }
 
 .cta a {
@@ -56,7 +64,6 @@ body {
   color: white;
   display: inline-block;
   font-family: impact;
-  font-size: 2rem;
   line-height: 1em;
   padding: 0.4em;
   text-decoration: none;
@@ -67,10 +74,6 @@ body {
     background: lighten(midnightblue, 10%);
     box-shadow: 0.2em 0.2em 0 black;
   }
-}
-
-.carousel img {
-  width: 100px;
 }
 
 .corgi-chat {
@@ -98,6 +101,10 @@ body {
 @media only screen and (max-device-width: 480px) {
   .logo {
     display: block;
+  }
+
+  .content, .cta {
+    font-size: 1.2rem;
   }
 
   .corgi-chat {
