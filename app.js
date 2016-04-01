@@ -8,15 +8,20 @@ var _names2 = _interopRequireDefault(_names);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var chat = document.getElementById('chat');
-var name = _names2.default[Math.floor(Math.random() * _names2.default.length)];
+var name = choice(_names2.default);
 var userInput = document.getElementById('arf');
+var VOCABULARY = ['arf', 'arf', 'arf', 'Arf', 'aRf', 'aRf', 'aRf!', 'rrrrrr', 'rrrrRRRRRRrrrr'];
 var MAX_HISTORY = 100;
 var CHATTER_DELAY = 60;
 var CHATTER_JITTER = 60;
 var REPLY_DELAY = 1;
-var REPLY_JITTER = 3;
+var REPLY_JITTER = 2;
 
 var speakTimer = void 0;
+
+function choice(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
 
 function greet() {
   var newElem = document.createElement('li');
@@ -25,10 +30,26 @@ function greet() {
   chat.appendChild(newElem);
 }
 
+function arf() {
+  var count = choice([2, 2, 2, 3, 3, 4, 5, 6]);
+  var words = [];
+  for (var i = count; i; --i) {
+    words.push(choice(VOCABULARY));
+  }
+  var sentence = words.join(' ');
+  if (Math.random() < 0.4) {
+    return sentence + '!';
+  }
+  if (Math.random() < 0.1) {
+    return sentence + '?';
+  }
+  return sentence;
+}
+
 function speak() {
   var newElem = document.createElement('li');
   newElem.className = 'message corgi';
-  newElem.innerHTML = '<span class="name">' + name + '</span>: aRf aRf';
+  newElem.innerHTML = '<span class="name">' + name + '</span>: ' + arf();
   // Prevent creating an infinite number of DOM nodes
   if (chat.childElementCount > MAX_HISTORY) {
     chat.firstChild.remove();
