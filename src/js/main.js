@@ -1,15 +1,20 @@
 import corgiNames from './names'
 
 const chat = document.getElementById('chat')
-const name = corgiNames[Math.floor(Math.random() * corgiNames.length)]
+const name = choice(corgiNames)
 const userInput = document.getElementById('arf')
+const VOCABULARY = ['arf', 'arf', 'arf', 'Arf', 'aRf', 'aRf', 'aRf!', 'rrrrrr', 'rrrrRRRRRRrrrr']
 const MAX_HISTORY = 100
 const CHATTER_DELAY = 60
 const CHATTER_JITTER = 60
 const REPLY_DELAY = 1
-const REPLY_JITTER = 3
+const REPLY_JITTER = 2
 
 let speakTimer
+
+function choice (arr) {
+  return arr[Math.floor(Math.random() * arr.length)]
+}
 
 function greet () {
   const newElem = document.createElement('li')
@@ -18,10 +23,26 @@ function greet () {
   chat.appendChild(newElem)
 }
 
+function arf () {
+  const count = choice([2, 2, 2, 3, 3, 4, 5, 6])
+  let words = []
+  for (let i = count; i; --i) {
+    words.push(choice(VOCABULARY))
+  }
+  const sentence = words.join(' ')
+  if (Math.random() < 0.4) {
+    return sentence + '!'
+  }
+  if (Math.random() < 0.1) {
+    return sentence + '?'
+  }
+  return sentence
+}
+
 function speak () {
   const newElem = document.createElement('li')
   newElem.className = 'message corgi'
-  newElem.innerHTML = `<span class="name">${name}</span>: aRf aRf`
+  newElem.innerHTML = `<span class="name">${name}</span>: ${arf()}`
   // Prevent creating an infinite number of DOM nodes
   if (chat.childElementCount > MAX_HISTORY) {
     chat.firstChild.remove()
