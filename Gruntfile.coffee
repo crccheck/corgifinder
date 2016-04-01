@@ -40,7 +40,7 @@ module.exports = (grunt) ->
         options:
           spawn: false
       html:
-        files: ['app/index.html']
+        files: ['app/**/*.html']
     connect:
       server:
         options:
