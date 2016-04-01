@@ -4,7 +4,6 @@
 body {
   background: powderblue;
   min-height: 100vh;
-  position: relative;  // for footer hack
 }
 
 * {
@@ -39,7 +38,6 @@ body {
   max-width: 26em;
   margin: 0 auto;
   padding: 0 1rem;
-  text-align: justify;
 
 
   strong {
@@ -65,7 +63,7 @@ body {
   display: inline-block;
   font-family: impact;
   line-height: 1em;
-  padding: 0.4em;
+  padding: 0.4rem;
   text-decoration: none;
   text-transform: uppercase;
   transition: background 0.1s, box-shadow 0.1s;
@@ -76,19 +74,34 @@ body {
   }
 }
 
+.carousel {
+  white-space: nowrap;
+  margin-bottom: 1rem;
+  position: absolute;
+  z-index: -1;
+  img {
+    opacity: 0.7;
+    width: 180px;
+    transition: opacity 0.1s;
+
+    &.selected {
+      opacity: 1;
+    }
+  }
+}
+
 .corgi-chat {
   float: right;
   margin-left: 1rem;
+  z-index: 1;
 }
 
 .site-footer {
   background: gray;
   box-sizing: border-box;
-  position: absolute;
-  bottom: 0;
   color: #eee;
   font-size: 0.8em;
-  margin-top: 1rem;
+  margin-top: 300px; // make room for the carousel
   padding: 0.5rem;
   width: 100%;
 
