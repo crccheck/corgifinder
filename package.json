@@ -33,6 +33,7 @@
     "grunt-postcss": "^0.8.0",
     "grunt-sass": "^1.0.0",
     "jquery": "^3.1.0",
-    "normalize.sass": "^3.0.3-2"
+    "normalize.sass": "^3.0.3-2",
+    "sw-precache": "^4.0.0"
   }
 }

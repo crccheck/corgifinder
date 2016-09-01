@@ -1,3 +1,5 @@
+utils = require('./utils')
+
 module.exports = (grunt) ->
   grunt.initConfig
     pkg: grunt.file.readJSON('package.json')
@@ -23,6 +25,11 @@ module.exports = (grunt) ->
           transform: ['babelify']
         files:
           'app/app.js': ['src/js/main.js']
+    swPrecache:
+      dev:
+        handleFetch: false
+        rootDir: 'app'
+
     watch:
       options:
         livereload: true
@@ -58,3 +65,12 @@ module.exports = (grunt) ->
   grunt.registerTask 'default', ['build']
   grunt.registerTask 'dev', ['connect', 'build', 'watch']
   grunt.registerTask 'build', ['sass', 'postcss', 'browserify']
+
+  grunt.registerMultiTask 'swPrecache', () ->
+    done = this.async()
+    rootDir = this.data.rootDir
+    handleFetch = this.data.handleFetch
+    utils.writeServiceWorkerFile rootDir, handleFetch, (error) ->
+      if error
+        grunt.fail.warn(error)
+      done()
