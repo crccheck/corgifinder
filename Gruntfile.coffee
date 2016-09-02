@@ -27,7 +27,7 @@ module.exports = (grunt) ->
           'app/app.js': ['src/js/main.js']
     swPrecache:
       dev:
-        handleFetch: false
+        # handleFetch: false
         rootDir: 'app'
 
     watch:
