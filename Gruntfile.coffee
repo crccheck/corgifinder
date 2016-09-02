@@ -64,9 +64,8 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'default', ['build']
   grunt.registerTask 'dev', ['connect', 'build', 'watch']
-  grunt.registerTask 'build', ['sass', 'postcss', 'browserify']
+  grunt.registerTask 'build', ['sass', 'postcss', 'browserify', 'swPrecache']
 
-  # TODO add this to build
   grunt.registerMultiTask 'swPrecache', () ->
     done = this.async()
     rootDir = this.data.rootDir
