@@ -2,9 +2,9 @@
   "name": "crccheck.com",
   "version": "0.0.0",
   "description": "Welcome to my Homepage",
-  "main": "index.js",
+  "main": "app/app.js",
   "scripts": {
-    "test": "standard"
+    "pretest": "standard"
   },
   "private": true,
   "repository": {
@@ -16,7 +16,11 @@
     "url": "https://github.com/crccheck/crccheck.com/issues"
   },
   "standard": {
-    "parser": "babel-eslint"
+    "parser": "babel-eslint",
+    "ignore": [
+      "app/service-worker.js",
+      "utils.js"
+    ]
   },
   "homepage": "https://github.com/crccheck/crccheck.com#readme",
   "devDependencies": {
@@ -34,6 +38,7 @@
     "grunt-sass": "^1.0.0",
     "jquery": "^3.1.0",
     "normalize.sass": "^3.0.3-2",
+    "standard": "^8.0.0",
     "sw-precache": "^4.0.0"
   }
 }
