@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Find available corgis in your area now!">
   <title>Corgi Finder</title>
+  <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="app.css">
   <meta property="og:image" content="http://adultcorgifinder.com/img/avatar1.jpg">
 </head>
@@ -50,6 +51,11 @@
     <a target="_blank" href="https://github.com/crccheck/corgifinder/issues">Suggest a link</a>
     <span class="text">Rescue a corgi today!</span>
   </footer>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js', {scope: './'})
+    }
+  </script>
   <script>
     (function(c,o,r,g,i,s){c.GoogleAnalyticsObject=g;c[g]||(c[g]=
     function(){(c[g].q=c[g].q||[]).push(arguments)});c[g].g=+new Date;
