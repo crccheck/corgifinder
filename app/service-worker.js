@@ -24,7 +24,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["app.css","8b11ba183a042c038f793ea1f7ae34fb"],["app.js","c18484590fd7215b12068006dbf88adb"],["embed/index.html","8b1327591a2edd40a47115f73fc313a0"],["img/avatar1.jpg","0c59e2241b96685c8c91e09ee25fce8f"],["img/avatar10.jpg","2830c5bf0cab28b829ab158611b9a0fb"],["img/avatar2.jpg","780a8f92a56d646872159c4d9fc4d889"],["img/avatar3.jpg","039442c869126a7e250a2f5a4ffe3bba"],["img/avatar4.jpg","a0019f0281e66c84288274d0370cf89c"],["img/avatar5.jpg","a6345cfa3959654e14f57066131b0961"],["img/avatar6.jpg","b316096a5b0081c2239586e1c5eeda45"],["img/avatar7.jpg","85399d1363cb645bd1b2763fa2c92304"],["img/avatar8.jpg","d255b3876c3146be1c48d26b7e3c533a"],["img/avatar9.jpg","aca3c2f9411f630b748a9a7e415ec831"],["index.html","df22ddd3370d54c2a17fdf1a79b33c6d"]];
+var precacheConfig = [["app.css","8b11ba183a042c038f793ea1f7ae34fb"],["app.js","c18484590fd7215b12068006dbf88adb"],["embed/index.html","f25df5d81e78bf4f7d52fdab603e66bf"],["img/avatar1.jpg","0c59e2241b96685c8c91e09ee25fce8f"],["img/avatar10.jpg","2830c5bf0cab28b829ab158611b9a0fb"],["img/avatar2.jpg","780a8f92a56d646872159c4d9fc4d889"],["img/avatar3.jpg","039442c869126a7e250a2f5a4ffe3bba"],["img/avatar4.jpg","a0019f0281e66c84288274d0370cf89c"],["img/avatar5.jpg","a6345cfa3959654e14f57066131b0961"],["img/avatar6.jpg","b316096a5b0081c2239586e1c5eeda45"],["img/avatar7.jpg","85399d1363cb645bd1b2763fa2c92304"],["img/avatar8.jpg","d255b3876c3146be1c48d26b7e3c533a"],["img/avatar9.jpg","aca3c2f9411f630b748a9a7e415ec831"],["index.html","df22ddd3370d54c2a17fdf1a79b33c6d"]];
 var cacheName = 'sw-precache-v2-crccheck.com-' + (self.registration ? self.registration.scope : '');
 
 
@@ -258,6 +258,15 @@ function parse(e){for(var t,r=[],n=0,o=0,a="";null!=(t=PATH_REGEXP.exec(e));){va
 // *** End of auto-included sw-toolbox code. ***
 
 
+
+// Runtime cache configuration, using the sw-toolbox library.
+
+toolbox.router.get(/^https:\/\/placecorgi.herokuapp.com\/300\/200/, function (request, values, options) {
+        // https://googlechrome.github.io/sw-toolbox/docs/master/tutorial-usage
+        return toolbox.networkFirst(request).catch(function() {
+          return toolbox.cacheOnly(new Request('/img/avatar1.jpg'));
+        });
+      }, {});
 
 
 

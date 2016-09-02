@@ -30,8 +30,15 @@ function writeServiceWorkerFile(rootDir, handleFetch, callback) {
       rootDir + '/img/**.*'
     ],
     stripPrefix: rootDir + '/',
-    runtimeCaching: [
-    ],
+    runtimeCaching: [{
+      urlPattern: /^https:\/\/placecorgi.herokuapp.com\/300\/200/,  // FIXME more generic
+      handler: function (request, values, options) {
+        // https://googlechrome.github.io/sw-toolbox/docs/master/tutorial-usage
+        return toolbox.networkFirst(request).catch(function() {
+          return toolbox.cacheOnly(new Request('/img/avatar1.jpg'));
+        });
+      }
+    }],
     // verbose defaults to false, but for the purposes of this demo, log more.
     verbose: true
   };
